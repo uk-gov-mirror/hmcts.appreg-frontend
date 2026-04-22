@@ -140,6 +140,7 @@ import {
 } from '@util/template-substitution-utils';
 
 type ChildErrorSource =
+  | 'codes'
   | 'notes'
   | 'fee'
   | 'respondent'
@@ -237,6 +238,7 @@ export class ApplicationsListEntryDetail implements OnInit {
 
   private parentErrors: ErrorItem[] = [];
   private childErrors: Record<ChildErrorSource, ErrorItem[]> = {
+    codes: [],
     notes: [],
     fee: [],
     respondent: [],
@@ -961,6 +963,7 @@ export class ApplicationsListEntryDetail implements OnInit {
 
     this.parentErrors = [];
     this.childErrors = {
+      codes: [],
       notes: [],
       fee: [],
       respondent: [],
